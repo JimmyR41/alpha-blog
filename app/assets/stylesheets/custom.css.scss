@@ -31,12 +31,11 @@ $navbar-default-bg: black;
   font-weight: bold;
 }
 
-.btn-primary {
+.btn-default {
   opacity: .85;
-  color: black;
 }
 
-$btn-primary-bg: #b8e5fe;
+$btn-default-bg: #b8e5fe;
 
 .btn:hover {
   background-color: #b8e5fe;
