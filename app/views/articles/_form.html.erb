@@ -25,12 +25,13 @@
       <div class="form-group">
         <div class="center">
           <%= f.submit class: "btn btn-primary btn-lg" %>
+          <%= link_to "Cancel Request and Return to Articles", articles_path, class: "btn btn-lg btn-danger" %>
         </div>
       </div>
 
+
+
     <% end %>
-    <div class=" center">
-      [ <%= link_to "Cancel Request and Return to Articles", articles_path %> ]
-    </div>
+
   </div>
 </div>
