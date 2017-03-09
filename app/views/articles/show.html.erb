@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Show Article</title>
-  </head>
-  <body>
+
     <h1>Showing Selected Article</h1>
     <p>
     Title: <%= @article.title %>
@@ -14,5 +8,3 @@
     </p>
     <p><%= link_to "Edit Article", edit_article_path(@article) %></p>
     <p><%= link_to "Back to Articles", articles_path %></p>
-  </body>
-</html>
