@@ -1,0 +1,35 @@
+<h1 class="center">Log in</h1>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_for :session, :html =>{class: "form-horizontal", role: "form", url: login_path} do |f| %>
+
+
+      <div class="form-group">
+        <%= f.label :email, class: "control-label col-sm-2" %>
+        <div class="col-sm-8 ">
+          <%= f.email_field :email, class: "form-control", placeholder: "enter email" %>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: "control-label col-sm-2" %>
+        <div class="col-sm-8">
+          <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="center">
+            <%= f.submit "Log in", class: "btn btn-lg btn-primary" %>
+            <%= link_to "Cancel log in", root_path, class: "btn btn-lg btn-danger" %>
+        </div>
+      </div>
+      <% end %>
+
+
+      </div>
+    </div>
+  </div>
