@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.paginate(page: params[:page],per_page: 5)
@@ -16,7 +18,7 @@ class ArticlesController < ApplicationController
   def create
     debugger
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
@@ -26,6 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
     if @article.update(article_params)
       flash[:success] = "Article successfully updated!"
       redirect_to article_path(@article)
@@ -55,5 +58,11 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def require_same_user
+      if @article.user != current_user
+        flash[:danger] = "Need to be logged in to perform this function"
+        redirect_to root_path
+      end
+    end
 
 end
