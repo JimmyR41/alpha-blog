@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    debugger
+    #debugger
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if @article.user != current_user
+      if current_user != @article.user and !current_user.admin?
         flash[:danger] = "Need to be logged in to perform this function"
         redirect_to root_path
       end
