@@ -21,7 +21,7 @@ class UsersController <ApplicationController
       flash[:success] = "Welcome to the blog #{@user.username}"
       redirect_to user_path(@user)
     else
-      route_to 'new'
+      render 'new'
     end
   end
 
@@ -30,7 +30,7 @@ class UsersController <ApplicationController
       flash[:success] = "Updated succesfully"
       redirect_to articles_path
     else
-      route_to "edit"
+      render "edit"
     end
   end
 
