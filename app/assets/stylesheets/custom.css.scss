@@ -1,4 +1,11 @@
 $navbar-default-bg: black;
+
+nav.navbar {
+  border-radius: 0 !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 #logo{
   float: left;
   font-size: 1.7em;
@@ -21,6 +28,8 @@ $navbar-default-bg: black;
   background-image: asset-url("cover.png");
   background-size: cover;
   height: 550px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .jumbotron h1 {
